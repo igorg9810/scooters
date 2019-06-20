@@ -1,0 +1,17 @@
+{% extends 'predictor/index.html' %}
+
+{% block content %}
+    <h1>Predict sales</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Go!</button>
+    </form>
+	<div class="col-sm-2">
+    {% block sidebar %}
+    <ul class="sidebar-nav">
+	   <li><a href="train/">Train model</a></li>
+       <li><a href="">Upload to Database</a></li>
+    </ul>
+    {% endblock %}
+    </div>
+{% endblock %}
